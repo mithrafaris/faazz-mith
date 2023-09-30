@@ -1,2 +1,45 @@
+<script type="text/javascript">
+
+    function validation() {
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;   
+
+
+
+      if (email == "") {
+        document.getElementById('email1').innerHTML =
+          "please fill the email field";
+        return false;
+      }
+      if (email.indexOf('@') <= 0) {
+        document.getElementById('email1').innerHTML =
+          "Invalid '@' position ";              
+        return false;
+      }
+      if ((email.charAt(email.length - 4) != '.') &&
+        (email.charAt(email.length - 3) != '.')) {
+        document.getElementById('email1').innerHTML =
+          "Invalid '.' position ";
+        return false;
+      }   
+
+
+      if (password == "") {
+        document.getElementById('passwords').innerHTML =
+          "please fill the password field";
+        return false;
+      }
+      if ((password.length < 3) || (password.length > 10)) {
+        document.getElementById('passwords').innerHTML =
+          "Password length must be between 4 and 10";
+        return false;
+      }
+
+      
+
+      
+    }
+   
+  </script>
 </body>
 </html>
